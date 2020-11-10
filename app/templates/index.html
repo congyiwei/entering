@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <meta charset="UTF-8">
+    <title>录入信息</title>
+</head>
+<body>
+<div id="box">
+    <form action="/login" method="post">
+
+            姓名：
+    <el-input placeholder="请输入姓名" v-model="name" clearable style="margin-top:10px;width: 220px" >
+</el-input>
+
+         手机号：
+    <el-input placeholder="请输入手机号" v-model="phone" clearable style="width: 180px" >
+</el-input>
+            所在地：
+    <template>
+  <el-select v-model="address" placeholder="请选择" clearable >
+    <el-option
+      v-for="item in options_1"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
+</template>
+
+    性别：
+    <template>
+  <el-select v-model="sex" placeholder="请选择" clearable >
+    <el-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
+</template>
+        <br>
+         <el-button type="primary" @click="handMessageClick" style="margin-top: 20px">提交</el-button>
+
+
+</div>
+<script type="text/javascript" src="../static/index.js">
+
+</script>
+</body>
+</html>
